@@ -12,6 +12,7 @@
        </tr> 
 
     <?php 
+    
     include "connection.php";
     if (isset($_POST["search"])) {
         $id = $_POST["id"];
@@ -24,13 +25,15 @@
         while($row = mysqli_fetch_array($query_run))
         {
             ?>
+            
             <tr>
-
-                <td> <?php echo $row['name'];?></td>   <br>
-                              
+                
+                <td> <?php echo $row['name'];?></td> 
                 <td> <?php echo $row['email'];?></td> 
                 <td> <?php echo $row['age'];?></td> 
-                <td><img src="uploadimage/ <?php echo $row['Image']; ?>" width="100px" height="90px" alt="" ></td> 
+                <td>
+                    <img src="<?php echo "uploadimage/".$row['Image']; ?>" width="150" alt="" >
+                </td> 
                 <td></td>
                 <td></td>
                 <td></td>
